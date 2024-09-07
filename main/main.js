@@ -2244,12 +2244,3 @@ setTimeout(() => {
 }
 }
 f14aInterval = setInterval(function(){runF14A()},10)
-
-function lookBack() {
-	if (geofs.camera.currentModeName == "cockpit") {
-		geofs.camera.currentDefinition.position[0] = (geofs.camera.definitions["cockpit"].orientations.current[0] / 1000)
-	}
-};
-lookBackInterval = setInterval(function() {
-	lookBack()
-}, 100)
