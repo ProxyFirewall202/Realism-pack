@@ -1,11 +1,6 @@
 //Consistency
 function realismGo() {
    console.log("Realism Pack running")
-   ui.notification.show("This addon is not longer being updated. At some point I'll have an addon manager that allows you to *select* which of the Realism Pack's </br> features you would like to use.")
-}
-
-console.log("Original scripts for immersion SFX, stall buffet, carrier catapults, shaders, and lift-based wingflex from AriakimTaiyo, Livery Selector and 3.5+ spoilers arming from Kolos26");
-
 
 function gBreath() {
    if (geofs.animation.values.loadFactor >= 3) {
@@ -2249,3 +2244,12 @@ setTimeout(() => {
 }
 }
 f14aInterval = setInterval(function(){runF14A()},10)
+
+function lookBack() {
+	if (geofs.camera.currentModeName == "cockpit") {
+		geofs.camera.currentDefinition.position[0] = (geofs.camera.definitions["cockpit"].orientations.current[0] / 1000)
+	}
+};
+lookBackInterval = setInterval(function() {
+	lookBack()
+}, 100)
